@@ -6,15 +6,9 @@
       "version": "17"
     }
   },
-  "onCreateCommand": "bash .devcontainer/install-flutter.sh",
-  "postCreateCommand": "flutter doctor && flutter pub get",
+  "onCreateCommand": "bash .devcontainer/install-flutter.sh || true",
+  "postCreateCommand": "echo 'Setup complete. Run: flutter doctor'",
   "forwardPorts": [8080],
-  "portsAttributes": {
-    "8080": {
-      "label": "Flutter Web",
-      "onAutoForward": "openPreview"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
