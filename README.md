@@ -34,22 +34,28 @@ it's the correct source for these files, not a hand-copied guess.
 
 1. Push this to a repo (or open it as-is) and create a Codespace from it.
    Wait for `.devcontainer/install-flutter.sh` to finish — first build takes
-   a few minutes.
-2. Generate the missing platform folders around the existing files:
-   ```bash
-   flutter create . --project-name sandbox_test
-   ```
-   This fills in `web/`, `android/`, etc. without touching `lib/main.dart`
-   or `pubspec.yaml`, since they already exist.
-3. Run it on the web target:
+   a few minutes. `postCreateCommand` then runs `flutter create .` to fill
+   in `web/`, `android/`, etc. around the existing files (without touching
+   `lib/main.dart` or `pubspec.yaml`), followed by `flutter pub get`.
+2. Run it on the web target:
    ```bash
    flutter run -d web-server --web-port 8080
    ```
-4. Open the **Ports** tab in VS Code, find port 8080, open it in the browser.
-5. Click the `+` button. If the number increments, the sandbox works end to
+3. Open the **Ports** tab in VS Code, find port 8080, open it in the browser.
+4. Click the `+` button. If the number increments, the sandbox works end to
    end.
-6. Optional: with the app running, press `r` in the terminal to test hot
+5. Optional: with the app running, press `r` in the terminal to test hot
    reload after editing `lib/main.dart`.
+
+## Installing Claude Code
+
+To use Claude Code inside the Codespace, install it with:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Then run `claude` from the terminal to start it.
 
 ## Using this as an actual sandbox
 
