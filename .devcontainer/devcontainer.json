@@ -1,20 +1,4 @@
 {
-  "name": "Flutter Sandbox",
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    }
-  },
-  "onCreateCommand": "bash .devcontainer/install-flutter.sh || true",
-  "postCreateCommand": "echo 'Setup complete. Run: flutter doctor'",
-  "forwardPorts": [8080],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "Dart-Code.flutter",
-        "Dart-Code.dart-code"
-      ]
-    }
-  }
+  "name": "Basic Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm"
 }
